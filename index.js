@@ -182,6 +182,27 @@ const fi = (function() {
     //   }
     //   return newCollection;
     //     },
+           flatten: function(array, shallow = false, newArray = []) {
+            if (!Array.isArray(array)) {
+                return newArray.push(array)
+            }
+            if (shallow) {
+                for (let value of array) {
+                    if (Array.isArray(value)) {
+                        for (let i = 0; i < value.length; i++) {
+                            newArray.push(value[i])
+                        }
+                    } else {
+                        newArray.push(value)
+                    }
+                }
+            } else {
+                for (let value of array) {
+                    this.flatten(value, false, newArray)
+                }
+            }
+            return newArray
+        },
     
     uniq: function(collection,fd,callback) {
   console.log(callback===undefined)

@@ -157,17 +157,32 @@ const fi = (function() {
     // },
     
         flatten: function(collection,shallow=false) {
-    if(shallow){//true
-      return [...collection];
-    }
-    else{//false
+    // if(shallow){//true
+    //   return [...collection];
+    // }
+    // else{//false
       
     
-    }
+    // }
     
-    return newCollection
-    },
-    
+    // return newCollection
+    // },
+     let newCollection=[];
+      if(shallow){
+      for(let i=0;i<collection.length;i++){
+        if(collection[i] instanceof Array){
+          newCollection.push(...collection[i])
+        }
+      else{
+        newCollection.push(collection[i])
+          }
+        }
+      }
+      else{
+     
+      }
+      return newCollection;
+        },
     
     uniq: function(collection,fd,callback) {
   console.log(callback===undefined)

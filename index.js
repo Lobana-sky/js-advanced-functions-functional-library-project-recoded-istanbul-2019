@@ -155,8 +155,6 @@ const fi = (function() {
     
     // return newCollection
     // },
-    
-        flatten: function(collection,shallow=false) {
     // if(shallow){//true
     //   return [...collection];
     // }
@@ -167,6 +165,7 @@ const fi = (function() {
     
     // return newCollection
     // },
+    flatten: function(collection,shallow=false) {
      let newCollection=[];
       if(shallow){
       for(let i=0;i<collection.length;i++){

@@ -165,23 +165,23 @@ const fi = (function() {
     
     // return newCollection
     // },
-    flatten: function(collection,shallow=false) {
-     let newCollection=[];
-      if(shallow){
-      for(let i=0;i<collection.length;i++){
-        if(collection[i] instanceof Array){
-          newCollection.push(...collection[i])
-        }
-      else{
-        newCollection.push(collection[i])
-          }
-        }
-      }
-      else{
+    // flatten: function(collection,shallow=false) {
+    // let newCollection=[];
+    //   if(shallow){
+    //   for(let i=0;i<collection.length;i++){
+    //     if(collection[i] instanceof Array){
+    //       newCollection.push(...collection[i])
+    //     }
+    //   else{
+    //     newCollection.push(collection[i])
+    //       }
+    //     }
+    //   }
+    //   else{
      
-      }
-      return newCollection;
-        },
+    //   }
+    //   return newCollection;
+    //     },
     
     uniq: function(collection,fd,callback) {
   console.log(callback===undefined)

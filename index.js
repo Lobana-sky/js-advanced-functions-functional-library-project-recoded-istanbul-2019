@@ -144,17 +144,31 @@ const fi = (function() {
     // }
     
    // return newCollection
-    flatten: function(collection,shallow=false) {
-    if(!shallow){
-      return collection.flat(Infinity) 
+    // flatten: function(collection,shallow=false) {
+    // if(!shallow){
+    //   return collection.flat(Infinity) 
+    // }
+    // else{
+    //   return collection.flat()
+    
+    // }
+    
+    // return newCollection
+    // },
+    
+        flatten: function(collection,shallow=false) {
+    if(shallow){//true
+      return [...collection];
     }
-    else{
-      return collection.flat()
+    else{//false
+      
     
     }
     
     return newCollection
     },
+    
+    
     uniq: function(collection,fd,callback) {
   console.log(callback===undefined)
       if(callback===undefined){
@@ -187,12 +201,23 @@ else{
     return Object.keys(object);
     },
     values: function(object) {
-return Object.values(object);
+      return Object.values(object);
     },
-    functions: function() {
-
+    // functions: function(fi) {
+    //   return Object.keys(fi);
+    // },
+     functions: function(fi) {
+       let result=[];
+      for(let x in fi){
+        if(typeof(fi[x])=="function"){
+          result.push(x);
+        }
+        
+      }
+      return result;
     },
+  
   }
 })()
-
+fi.functions(fi)
 fi.libraryMethod()
